@@ -1,17 +1,20 @@
-http = require('node:http');
-listener = function (request, response) {
-   // Send the HTTP header 
-   // HTTP Status: 200 : OK
-   // Content Type: text/html
-   response.writeHead(200, {'Content-Type': 'text/html'});
+
+const express = require('express'); 
+const app = express(); 
   
-   // Send the response body as "Hello World"
-   response.end('<h2 style="text-align: center;">Hello World</h2>');
-};
-
-server = http.createServer(listener);
-server.listen(3000);
-
-// Console will print the message
-
-console.log('Server running at http://127.0.0.1:3000/');
+// Sample JSON data 
+var data = { 
+    portal : "GeeksforGeeks", 
+    knowledge : "unlimited", 
+    location : "Noida"  
+} 
+  
+app.get('/' , (req,res)=>{ 
+   // This will send the JSON data to the client. 
+    res.json(data);  
+}) 
+  
+// Server setup 
+app.listen(4000 , ()=>{ 
+    console.log("server running"); 
+});

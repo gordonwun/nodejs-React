@@ -6,14 +6,15 @@ app.use(express.json);
 var data = { 
     portal : "GeeksforGeeks", 
     knowledge : "unlimited", 
-    location : "Noida"  
+    location : "Noida"
+
 } 
   
 app.get('/' , (req,res)=>{ 
    // This will send the JSON data to the client. 
     res.json(data);  
 }) 
-  
+
 // Server setup 
 app.listen(4000 , ()=>{ 
     console.log("server running"); 

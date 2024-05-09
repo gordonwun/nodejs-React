@@ -1,5 +1,6 @@
 const express = require('express'); 
-const app = express(); 
+const app = express();
+app.use(express.json);
   
 // Sample JSON data 
 var data = { 
